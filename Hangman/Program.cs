@@ -80,6 +80,7 @@ namespace Hangman
                     Console.WriteLine("Play again? (Y/N)");
                     ConsoleKeyInfo keyPress = Console.ReadKey();
                     again = keyPress.Key.ToString();
+                    Console.WriteLine();
 
                     if (again.ToUpper() != "Y" && again.ToUpper() != "N")
                     {
