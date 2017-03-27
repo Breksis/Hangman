@@ -24,9 +24,42 @@ namespace Hangman
         }
 
         //this method checks if the char inputted by the user matches any letters in the secret word
-        public void CheckGuess(List<DisplayLetter> displayLetters, char guess, HangmanPicture draw)
+        public void CheckGuess(List<DisplayLetter> displayLetters, HangmanPicture draw)
         {
             bool correctGuess = false;
+            bool validInput = false;
+            char guess;
+            
+
+            Console.Write("Please enter a letter: ");
+            do
+            {
+                int checkedLetters = 0;
+                //Gets user input
+                ConsoleKeyInfo info = Console.ReadKey();
+                string keyString = info.Key.ToString();
+                guess = keyString[0];
+                Console.WriteLine();
+
+                //checks user input against already guessed letters, if letter has already been guessed prompts user
+                //to try another letter
+                foreach (char character in guesses)
+                {
+                    if (character == char.ToUpper(guess))
+                    {
+                        Console.Write("You have already entered \"" + guess + "\", please enter a different letter: ");
+                        break;
+                    }
+                    else
+                    {
+                        checkedLetters++;
+                    }
+                }
+                if (checkedLetters == guesses.Count())
+                {
+                    validInput = true;
+                }
+            } while (validInput == false);
 
             Console.WriteLine();
             foreach (DisplayLetter item in displayLetters)

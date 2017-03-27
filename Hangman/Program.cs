@@ -53,13 +53,13 @@ namespace Hangman
                     //prompts the user for input
                     //TODO: write some code that prevents the user from entering 
                     //non-alpha characters
-                    Console.Write("Please enter a letter: ");
+                    /*Console.Write("Please enter a letter: ");
                     ConsoleKeyInfo info = Console.ReadKey();
                     string keyString = info.Key.ToString();
                     char guess = keyString[0];
-                    Console.WriteLine();
+                    Console.WriteLine();*/
 
-                    checkCharacter.CheckGuess(secretLetters, guess, drawHangman);
+                    checkCharacter.CheckGuess(secretLetters, drawHangman);
                     Console.WriteLine(drawHangman.HangImg);
 
                     //checks to see if the user has guessed all the letters or made 
