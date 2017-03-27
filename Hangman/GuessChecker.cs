@@ -8,7 +8,7 @@ namespace Hangman
 {
     class GuessChecker
     {
-
+        List<char> guesses = new List<char>();
         private int correct = 0;
         public int Correct
         {
@@ -23,8 +23,8 @@ namespace Hangman
             set { incorrect = value; }
         }
 
-        //this method checks if the char inputted by the user correspends to any letters in the secret word
-        public void CheckGuess(List<DisplayLetter> displayLetters, char guess, HangmanDrawer draw)
+        //this method checks if the char inputted by the user matches any letters in the secret word
+        public void CheckGuess(List<DisplayLetter> displayLetters, char guess, HangmanPicture draw)
         {
             bool correctGuess = false;
 
@@ -45,10 +45,22 @@ namespace Hangman
             else
             {
                 this.Incorrect++;
-                draw.IncorrectGuess++;
                 Console.WriteLine("I'm sorry, you guessed incorrectly");
-                draw.Draw();
+                draw.Draw(this.Incorrect);
             }
+            this.guesses.Add(guess);
+            Console.WriteLine();
+        }
+
+        public void DisplayGuesses()
+        {
+            Console.Write("Guesses: ");
+
+            foreach (char letter in guesses)
+            {
+                Console.Write(letter + " ");
+            }
+            Console.WriteLine();
             Console.WriteLine();
         }
     }

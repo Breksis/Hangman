@@ -12,6 +12,8 @@ namespace Hangman
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Hangman\n");
+
             //game loop
             do
             {
@@ -19,11 +21,11 @@ namespace Hangman
 
                 GameState currentGameState = GameState.GamePlaying;
                 GuessChecker checkCharacter = new GuessChecker();
-                HangmanDrawer drawHangman = new HangmanDrawer();
+                HangmanPicture drawHangman = new HangmanPicture();
                 SecretWord currentWord = new SecretWord("BANANA");
 
-                //can probably move the following section to the SecretWord class 
-                //when I write a function to randomly select a word.
+                //converts the secret word into a char array, then creates a DisplayLetter object for
+                //each char in the array and adds these to a list
                 char[] currentArray = currentWord.Word.ToCharArray();
                 List<DisplayLetter> secretLetters = new List<DisplayLetter>();
                
@@ -33,9 +35,7 @@ namespace Hangman
                     secretLetters.Add(character);
                 }
                 //end of section.
-
-                //Happy little intro message
-                Console.WriteLine("Welcome to Hangman\n");
+             
                 do
                 {
                     //runs through each letter in the word and displays either an underscore
@@ -47,6 +47,8 @@ namespace Hangman
 
                     Console.WriteLine();
                     Console.WriteLine();
+
+                    checkCharacter.DisplayGuesses();
 
                     //prompts the user for input
                     //TODO: write some code that prevents the user from entering 

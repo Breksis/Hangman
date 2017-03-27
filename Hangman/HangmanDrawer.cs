@@ -6,24 +6,17 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    class HangmanDrawer
+    class HangmanPicture
     {
-        private int incorrectGuess = 0;
-        public int IncorrectGuess
-        {
-            get { return incorrectGuess; }
-            set { incorrectGuess = value; }
-        }
-
         private string hangImg = "";
         public string HangImg
         {
             get { return hangImg; }
         }
 
-        public void Draw()
+        public void Draw(int incorrectGuess)
         {
-            switch (this.incorrectGuess)
+            switch (incorrectGuess)
             {
                 case 0:
                     break;
