@@ -59,9 +59,12 @@ namespace Hangman
                 {
                     validInput = true;
                 }
+                
             } while (validInput == false);
 
             Console.WriteLine();
+
+            //checks user input against secretWord
             foreach (DisplayLetter item in displayLetters)
             {
                 if (item.Letter == char.ToUpper(guess) && item.Guessed == false)

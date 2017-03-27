@@ -22,7 +22,8 @@ namespace Hangman
                 GameState currentGameState = GameState.GamePlaying;
                 GuessChecker checkCharacter = new GuessChecker();
                 HangmanPicture drawHangman = new HangmanPicture();
-                SecretWord currentWord = new SecretWord("BANANA");
+                Random rnd = new Random();
+                SecretWord currentWord = new SecretWord(rnd.Next(0, 21));
 
                 //converts the secret word into a char array, then creates a DisplayLetter object for
                 //each char in the array and adds these to a list
@@ -34,7 +35,6 @@ namespace Hangman
                     DisplayLetter character = new DisplayLetter(letter);
                     secretLetters.Add(character);
                 }
-                //end of section.
              
                 do
                 {
@@ -49,16 +49,6 @@ namespace Hangman
                     Console.WriteLine();
 
                     checkCharacter.DisplayGuesses();
-
-                    //prompts the user for input
-                    //TODO: write some code that prevents the user from entering 
-                    //non-alpha characters
-                    /*Console.Write("Please enter a letter: ");
-                    ConsoleKeyInfo info = Console.ReadKey();
-                    string keyString = info.Key.ToString();
-                    char guess = keyString[0];
-                    Console.WriteLine();*/
-
                     checkCharacter.CheckGuess(secretLetters, drawHangman);
                     Console.WriteLine(drawHangman.HangImg);
 

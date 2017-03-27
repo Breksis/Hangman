@@ -8,10 +8,6 @@ namespace Hangman
 {
     class DisplayLetter
     {
-        public DisplayLetter()
-        {
-        }
-
         public DisplayLetter(char letter)
         {
             Letter = letter;
