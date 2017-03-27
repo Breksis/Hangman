@@ -23,7 +23,7 @@ namespace Hangman
                 GuessChecker checkCharacter = new GuessChecker();
                 HangmanPicture drawHangman = new HangmanPicture();
                 Random rnd = new Random();
-                SecretWord currentWord = new SecretWord(rnd.Next(0, 21));
+                SecretWord currentWord = new SecretWord(rnd.Next(20));
 
                 //converts the secret word into a char array, then creates a DisplayLetter object for
                 //each char in the array and adds these to a list
