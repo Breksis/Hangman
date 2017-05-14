@@ -4,3 +4,6 @@ C:\Users\jason\Desktop\New folder\Hangman\Hangman\bin\Debug\Hangman.pdb
 C:\Users\jason\Desktop\New folder\Hangman\Hangman\obj\Debug\Hangman.exe
 C:\Users\jason\Desktop\New folder\Hangman\Hangman\obj\Debug\Hangman.pdb
 C:\Users\jason\Desktop\New folder\Hangman\Hangman\obj\Debug\Hangman.csprojResolveAssemblyReference.cache
+C:\Users\jason\Documents\Games\Hangman\Hangman\bin\Debug\Hangman.exe.config
+C:\Users\jason\Documents\Games\Hangman\Hangman\obj\Debug\Hangman.exe
+C:\Users\jason\Documents\Games\Hangman\Hangman\obj\Debug\Hangman.pdb
